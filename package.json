@@ -25,6 +25,7 @@
     "vite": "^4.4.11"
   },
   "publishConfig": {
-    "agamotto-cloud:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/agamotto-cloud/",
+    "access": "public"
   }
 }
