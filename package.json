@@ -26,9 +26,5 @@
   "devDependencies": {
     "typescript": "^5.2.2",
     "vite": "^4.4.11"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "public"
   }
 }
