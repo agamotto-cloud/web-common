@@ -7,3 +7,13 @@ export function setupCounter(element: HTMLButtonElement) {
   element.addEventListener('click', () => setCounter(++counter))
   setCounter(0)
 }
+
+import { get, post, setBaseUrl, setDefaultHeaders, setToken } from './client';
+
+export const client = {
+  get,
+  post,
+  setBaseUrl,
+  setDefaultHeaders,
+  setToken
+}
