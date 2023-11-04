@@ -1,5 +1,5 @@
 {
-  "name": "web-common",
+  "name": "@agamotto-cloud/web-common",
   "private": false,
   "version": "0.0.1",
   "type": "module",
@@ -26,5 +26,9 @@
   "devDependencies": {
     "typescript": "^5.2.2",
     "vite": "^4.4.11"
-  }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  } 
 }
