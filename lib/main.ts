@@ -8,12 +8,8 @@ export function setupCounter(element: HTMLButtonElement) {
   setCounter(0)
 }
 
-import { get, post, setBaseUrl, setDefaultHeaders, setToken } from './client';
+import client from './client';
 
-export const client = {
-  get,
-  post,
-  setBaseUrl,
-  setDefaultHeaders,
-  setToken
-}
+import("web_main/main")
+
+export default client;

@@ -1,7 +1,7 @@
 
 console.log('Hello World!')
 import x from "./cccc"
-import client from '../lib/client';
+import client from '../lib/main';
 client.setToken("abc123")
 client.setBaseUrl("https://www.baidu.com/api/v1/")
 
@@ -11,6 +11,7 @@ client.setDefaultHeaders({
 })
 
 
+import("web_main/main")
 
 client.get("avc")
 console.log(client)
