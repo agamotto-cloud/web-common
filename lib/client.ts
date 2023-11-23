@@ -1,9 +1,6 @@
 
-interface Global {
-    globalToken: string | null;
-    globalBaseUrl: string;
-    defaultHeaders: any;
-}
+import { Global } from './index';
+
 
 var globalVar: Global = {
     globalToken: null,
@@ -13,7 +10,7 @@ var globalVar: Global = {
     },
 };
 
-console.log("请求接口初始化")
+
 export function setBaseUrl(url: string) {
     globalVar.globalBaseUrl = url;
 }
@@ -63,6 +60,14 @@ const client = {
     global: globalVar,
 }
 
-
+//   declare global {
+//     interface ImportMeta {
+//       env: {
+//         BASE_URL: string;
+//         [key: string]: string | boolean | undefined;
+//       };
+//     }
+//   }
+  
 
 export default client;
