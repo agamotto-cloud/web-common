@@ -4,9 +4,10 @@ interface Global {
     globalBaseUrl: string;
     defaultHeaders: any;
 }
+
 var globalVar: Global = {
     globalToken: null,
-    globalBaseUrl: 'http://localhost:3000/api/v1/',
+    globalBaseUrl: import.meta.env.BASE_URL?import.meta.env.BASE_URL:'http://localhost:3000/api/v1/',
     defaultHeaders : {
         'Content-Type': 'application/json',
     },
