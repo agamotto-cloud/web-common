@@ -1,5 +1,5 @@
 
-import client from './client';
+import {client} from './clientImpl';
 
 import("web_main/main")
 
