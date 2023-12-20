@@ -1,10 +1,11 @@
 
 import client from './client';
 
-import("web_main/main")
+import { loadMain } from './web-common';
 
 export {
   client,
+  loadMain
 }
 
 

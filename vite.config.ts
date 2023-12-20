@@ -1,16 +1,7 @@
 import { defineConfig } from 'vite'
-import federation from "@originjs/vite-plugin-federation";
 
 
 export default defineConfig({
-  plugins: [
-    federation({
-
-      remotes: {
-        //web_main: "http://localhost:9999/main//web-main.js",
-        web_main: "/main/web-main.js",
-      },
-    })],
 
   build: {
     target: "esnext",
