@@ -1,5 +1,5 @@
 
-import client from './client';
+import {client} from './clientImpl';
 
 import { loadMain } from './web-common';
 
