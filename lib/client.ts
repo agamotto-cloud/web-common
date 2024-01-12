@@ -1,5 +1,4 @@
-
-import { ClientType, Global } from './client';
+import { Global, ClientType } from ".";
 
 
 var globalVar: Global = {
@@ -28,6 +27,15 @@ export function setToken(token: string) {
     });
 }
 
+async function handleBody(response: Response) {
+    const body = await response.json()
+    if (body.code != 0) {
+        //抛出异常，内容就是这个body
+        throw new Error(body);
+    }
+    return body;
+}
+
 
 export async function get(endpoint: string, params?: any) {
     const urlParams = params ? `?${new URLSearchParams(params).toString()}` : '';
@@ -35,7 +43,7 @@ export async function get(endpoint: string, params?: any) {
         method: 'GET',
         headers: globalVar.defaultHeaders,
     });
-    return response.json();
+    return handleBody(response);
 }
 
 export async function post(endpoint: string, body: any, params?: any) {
@@ -45,7 +53,7 @@ export async function post(endpoint: string, body: any, params?: any) {
         headers: globalVar.defaultHeaders,
         body: JSON.stringify(body),
     });
-    return response.json();
+    return handleBody(response);
 }
 
 async function put(endpoint: string, body: any, params?: any) {
@@ -55,7 +63,7 @@ async function put(endpoint: string, body: any, params?: any) {
         headers: globalVar.defaultHeaders,
         body: JSON.stringify(body),
     });
-    return response.json();
+    return handleBody(response);
 }
 
 async function deleted(endpoint: string, params?: any) {
@@ -64,8 +72,10 @@ async function deleted(endpoint: string, params?: any) {
         method: 'GET',
         headers: globalVar.defaultHeaders,
     });
-    return response.json();
+    return handleBody(response);
 }
+
+
 
 
 export const client: ClientType = {
