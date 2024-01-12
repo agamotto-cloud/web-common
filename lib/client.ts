@@ -31,7 +31,7 @@ async function handleBody(response: Response) {
     const body = await response.json()
     if (body.code != 0) {
         //抛出异常，内容就是这个body
-        throw new Error(body);
+        throw body;
     }
     return body;
 }
